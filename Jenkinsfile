@@ -35,7 +35,7 @@ pipeline{
             steps {
                 script {
                     withSonarQubeEnv(credentialsId: 'jenkins-sonarqube-token') {
-                        sh "mvn sonaruser:sonaruser"
+                        sh "mvn sonar:sonar"
                     }
                 }
             }
