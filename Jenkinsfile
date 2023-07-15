@@ -12,12 +12,10 @@ pipeline{
                 cleanWs()
              }
         }
-    }
 
-    stages{
         stage("Checkout from SCM"){
              steps{
-                git bransch: 'main', credentialsID: 'github', url: 'https://github.com/yuabhishek14/Production-E2E-Pipeline'
+                git branch: 'main', credentialsId: 'github', url: 'https://github.com/yuabhishek14/Production-E2E-Pipeline'
              }
         }
     }
