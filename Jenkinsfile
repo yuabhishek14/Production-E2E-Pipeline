@@ -18,5 +18,17 @@ pipeline{
                 git branch: 'main', credentialsId: 'github', url: 'https://github.com/yuabhishek14/Production-E2E-Pipeline'
              }
         }
+
+        stage("Build Application"){
+             steps{
+                sh "mvn clean package"
+             }
+        }
+
+        stage("Test Application"){
+             steps{
+                sh "mvn test"
+             }
+        }
     }
 }
