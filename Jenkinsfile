@@ -7,7 +7,7 @@ pipeline{
         maven 'Maven3'
     }
     environment {
-        APP_NAME = "Production-E2E-Pipeline"
+        APP_NAME = "production-e2e-pipeline"
         RELEASE = "1.0.0"
         DOCKER_USER = "abhishekdevops14"
         DOCKER_PASS = 'dockerhub'
