@@ -6,7 +6,14 @@ pipeline{
         jdk 'java17'
         maven 'Maven3'
     }
-    
+    environment {
+        APP_NAME = "Production-E2E-Pipeline"
+        RELEASE = "1.0.0"
+        DOCKER_USER = "abhishekdevops14"
+        DOCKER_PASS = 'dockerhub'
+        IMAGE_NAME = "${DOCKER_USER}" + "/" + "${APP_NAME}"
+        IMAGE_TAG = "${RELEASE}-${BUILD_NUMBER}"
+    }
     stages{
         stage("Cleanup Workspaces"){
              steps{
@@ -37,6 +44,22 @@ pipeline{
                 script {
                     withSonarQubeEnv(credentialsId: 'jenkins-sonarqube-token') {
                         sh "mvn sonar:sonar"
+                    }
+                }
+            }
+
+        }
+
+          stage("Build & Push Docker Image") {
+            steps {
+                script {
+                    docker.withRegistry('',DOCKER_PASS) {
+                        docker_image = docker.build "${IMAGE_NAME}"
+                    }
+
+                    docker.withRegistry('',DOCKER_PASS) {
+                        docker_image.push("${IMAGE_TAG}")
+                        docker_image.push('latest')
                     }
                 }
             }
