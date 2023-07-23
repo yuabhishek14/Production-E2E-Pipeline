@@ -17,3 +17,33 @@
 - **Docker**: Containerization platform for building, shipping, and running applications in containers.
 - **Argo CD**: Continuous Delivery tool for Kubernetes applications.
 - **Kubernetes**: Open-source container orchestration platform for automating application deployment, scaling, and management.
+
+
+## Requirements
+
+Before setting up the project, ensure you meet the following prerequisites:
+
+1. **VirtualBox:**
+   - Install VirtualBox on your system by downloading it from the official VirtualBox website: [VirtualBox Downloads](https://www.virtualbox.org/wiki/Downloads).
+   - Follow the installation instructions for your operating system to complete the setup.
+
+2. **Virtual Machines:**
+   - Create five virtual machines with the specified hostnames and purposes as follows:
+
+   | Virtual Machine  | Hostname       | Purpose                                    | Private IP       |
+   |------------------|----------------|--------------------------------------------|-----------------|
+   | VM1              | jenkinsMachine | Jenkins server for CI/CD pipeline         | 192.168.1.2     |
+   | VM2              | agentMachine   | Jenkins agent for building and executing jobs | 192.168.1.3               |
+   | VM3              | sonar          | SonarQube server for code quality analysis | 192.168.1.4     |
+   | VM4              | argoCd         | Argo CD server for Kubernetes continuous delivery | 192.168.1.5              |
+   | VM5              | app-cluster    | Kubernetes cluster to deploy and manage applications | 192.168.1.6  |
+
+   - To create the virtual machines, launch VirtualBox and follow these general steps:
+     - Click on "New" to create a new virtual machine.
+     - Provide a name and select "Linux" as the operating system, and choose "Ubuntu (64-bit)" as the version for each virtual machine.
+     - Allocate sufficient memory (RAM) and create a virtual hard disk for each machine.
+     - Configure the network settings with a "Bridged Adapter" to enable direct communication between the VMs and your host system.
+     - Start each virtual machine and install Ubuntu 22.04 as the operating system on them.
+
+3. **SSH Setup:**
+   - Set up SSH access between your host system and the virtual machines to enable seamless communication.
