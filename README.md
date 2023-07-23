@@ -54,7 +54,7 @@ Before setting up the project, ensure you meet the following prerequisites:
    - Set up SSH access between your host system and the virtual machines to enable seamless communication.
 
 ## Jenkins Setup
-
+Login to your VM1 and apply the following commands : 
 #### Update Package Repository and Upgrade Packages
   Become root
 ```bash
