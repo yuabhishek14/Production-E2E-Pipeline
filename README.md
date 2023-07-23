@@ -7,7 +7,7 @@
   <img src="https://miro.medium.com/v2/resize:fit:720/format:webp/0*-A0tHZ1tuR1WoGTM.png" alt="SonarQube Logo" width="50" height="50">
   <img src="https://www.docker.com/sites/default/files/d8/2019-07/Moby-logo.png" alt="Docker Logo" width="50" height="50">
   <img src="https://argo-cd.readthedocs.io/en/stable/_images/argo-cd-icon.png" alt="Argo CD Logo" width="50" height="50">
-  <img src="https://kubernetes.io/images/kubernetes-horizontal-color.png" alt="Kubernetes Logo" width="50" height="50">
+  <img src="https://kubernetes.io/images/kubernetes-horizontal-color.png" alt="Kubernetes Logo" width="100" height="50">
 </p>
 
 - **GitHub**: Version control system for source code management.
