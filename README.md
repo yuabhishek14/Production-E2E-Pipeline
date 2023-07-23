@@ -10,7 +10,9 @@
   <img src="https://kubernetes.io/images/kubernetes-horizontal-color.png" alt="Kubernetes Logo" width="200" height="50">
 </p>
 
-- **GitHub**: Version control system for source code management. <img src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" alt="GitHub Logo" width="60" height="60">
+- **GitHub**: Version control system for source code management. <img src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" alt="GitHub Logo" width="50" height="50">
+
+
 - **Jenkins**: Automation server for building, testing, and deploying software.
 - **Maven**: Build automation and project management tool for Java projects.
 - **SonarQube**: Continuous inspection of code quality and security.
