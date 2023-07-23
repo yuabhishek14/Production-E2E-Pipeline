@@ -3,10 +3,10 @@
 <p align="center">
   <img src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" alt="GitHub Logo" width="50" height="50">
   <img src="https://www.jenkins.io/images/logos/jenkins/jenkins.svg" alt="Jenkins Logo" width="50" height="50">
-  <img src="https://maven.apache.org/images/maven-logo-black-on-white.png" alt="Maven Logo" width="50" height="50">
+  <img src="https://maven.apache.org/images/maven-logo-black-on-white.png" alt="Maven Logo" width="50" height="100">
   <img src="https://miro.medium.com/v2/resize:fit:720/format:webp/0*-A0tHZ1tuR1WoGTM.png" alt="SonarQube Logo" width="50" height="50">
-  <img src="https://www.docker.com/sites/default/files/d8/2019-07/Moby-logo.png" alt="Docker Logo" width="50" height="50">
-  <img src="https://argo-cd.readthedocs.io/en/stable/_images/argo-cd-icon.png" alt="Argo CD Logo" width="50" height="50">
+  <img src="https://logos-world.net/wp-content/uploads/2021/02/Docker-Logo.png" alt="Docker Logo" width="50" height="50">
+  <img src="https://www.opsmx.com/wp-content/uploads/2022/07/Argo-1-e1630327305635-1.png" alt="Argo CD Logo" width="50" height="50">
   <img src="https://kubernetes.io/images/kubernetes-horizontal-color.png" alt="Kubernetes Logo" width="100" height="50">
 </p>
 
