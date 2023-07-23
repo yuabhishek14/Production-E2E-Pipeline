@@ -6,7 +6,7 @@
   <img src="https://maven.apache.org/images/maven-logo-black-on-white.png" alt="Maven Logo" width="150" height="50">
   <img src="https://cdn.worldvectorlogo.com/logos/sonarqube.svg" alt="SonarQube Logo" width="100" height="60">
   <img src="https://1000logos.net/wp-content/uploads/2021/11/Docker-Logo-2013.png" alt="Docker Logo" width="100" height="50">
-  <img src="https://roadie.io/static/59fa7a64fb19816e69c0c3dbd5d74a6c/29111/argo-cd-logo.webp" alt="Argo CD Logo" width="120" height="80">
+  <img src="https://roadie.io/static/59fa7a64fb19816e69c0c3dbd5d74a6c/29111/argo-cd-logo.webp" alt="Argo CD Logo" width="50" height="50">
   <img src="https://kubernetes.io/images/kubernetes-horizontal-color.png" alt="Kubernetes Logo" width="200" height="50">
 </p>
 
