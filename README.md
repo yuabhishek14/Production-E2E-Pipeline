@@ -1,4 +1,4 @@
-# Complete Production End to End Pipeline
+![image](https://github.com/yuabhishek14/Production-E2E-Pipeline/assets/43784560/f87a1689-5e9c-43ff-b80a-e9613b8af8ae)# Complete Production End to End Pipeline
 
 This is a complete end to end declarative pipeline 
 
@@ -124,7 +124,7 @@ sudo su -
 sudo apt update
 sudo apt upgrade
 ```
-#### Create Jenkins User
+#### Create Jenkins User and set Password
 ```bash
 sudo adduser jenkins
 ```
@@ -180,7 +180,6 @@ sudo apt-get update
 sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
 ```
 
- 
 #### Manage Docker as a non-root user
   Create the docker group
 ```bash
@@ -202,4 +201,34 @@ Verify that you can run docker commands without sudo.
 ```bash
 docker run hello-world
 ```
-      
+
+#### Connect to Remote SSH Agent
+  From the Jenkins UI to Agent Machine IP
+```bash
+ssh jenkins@192.168.1.3
+```
+Create private and public SSH keys. The following command creates the private key jenkinsAgent_rsa and the public key jenkinsAgent_rsa.pub. It is recommended to store your keys under ~/.ssh/ so we move to that directory before creating the key pair.
+```bash
+mkdir ~/.ssh; cd ~/.ssh/ && ssh-keygen -t rsa -m PEM -C "Jenkins agent key" -f "jenkinsAgent_rsa"
+```
+Add the public SSH key to the list of authorized keys on the agent machine
+```bash
+cat jenkinsAgent_rsa.pub >> ~/.ssh/authorized_keys
+```
+Ensure that the permissions of the ~/.ssh directory is secure, as most ssh daemons will refuse to use keys that have file permissions that are considered insecure:
+```bash
+chmod 700 ~/.ssh
+chmod 600 ~/.ssh/authorized_keys ~/.ssh/jenkinsAgent_rsa
+```
+Copy the private SSH key (~/.ssh/jenkinsAgent_rsa) from the agent machine to your OS clipboard
+```bash
+cat ~/.ssh/jenkinsAgent_rsa
+```
+Now you can add the Agent on the Jenkins UI (Controller)
+
+#### Agent Setup from Jenkins UI
+Go to the below path and change the Number of executors to 0
+![image](https://github.com/yuabhishek14/Production-E2E-Pipeline/assets/43784560/df86fd99-eea1-41ea-934b-bb92136ca023)
+
+
+
