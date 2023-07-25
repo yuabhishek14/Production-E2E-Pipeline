@@ -229,7 +229,7 @@ Now you can add the Agent on the Jenkins UI (Controller)
 #### Agent Setup from Jenkins UI
 Go to the below path and change the Number of executors to 0
 
-<img src="https://github.com/yuabhishek14/Production-E2E-Pipeline/assets/43784560/df86fd99-eea1-41ea-934b-bb92136ca023" alt="image" width="300" height="500" />
+<img src="https://github.com/yuabhishek14/Production-E2E-Pipeline/assets/43784560/df86fd99-eea1-41ea-934b-bb92136ca023" alt="image" width="200" height="500" />
 
 Now Create a new Agent (remember to select permanent agent flag)
 Fill the details as follows :
