@@ -160,5 +160,46 @@ sudo apt-get install \
     gnupg \
     lsb-release
 ```
+Add Docker’s official GPG key:
 
+```bash
+sudo mkdir -m 0755 -p /etc/apt/keyrings
+curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /etc/apt/keyrings/docker.gpg
+```
+Use the following command to set up the repository:
+
+```bash
+echo \
+  "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.gpg] https://download.docker.com/linux/ubuntu \
+  $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
+```
+Install Docker Engine
+
+```bash
+sudo apt-get update
+sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
+```
+
+ 
+#### Manage Docker as a non-root user
+  Create the docker group
+```bash
+sudo groupadd docker
+```
+  Add your user jenkins to the docker group.
+```bash
+sudo usermod -aG docker jenkins
+```
+Change user to jenkins
+```bash
+su - jenkins
+```
+Run the following command to activate the changes to groups:
+```bash
+newgrp docker
+```
+Verify that you can run docker commands without sudo.
+```bash
+docker run hello-world
+```
       
