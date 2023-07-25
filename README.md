@@ -251,6 +251,6 @@ Fill the details as follows :-
 #### Intall Java and Maven tool on UI
 GO to plugins and install these plugins : 
 
-<img src="https://github.com/yuabhishek14/Production-E2E-Pipeline/assets/43784560/f72c392f-52d3-4602-a1bd-ef408cb05ed5" alt="image" width="300" height="200" />
+<img src="https://github.com/yuabhishek14/Production-E2E-Pipeline/assets/43784560/f72c392f-52d3-4602-a1bd-ef408cb05ed5" alt="image" width="300" height="250" />
 
 
