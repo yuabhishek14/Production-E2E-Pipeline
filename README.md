@@ -215,7 +215,7 @@ Go to VM1 terminal and create .ssh/known_hosts file .
 ```bash
 cd /var/lib/jenkins/
 ssh jenkins@192.168.1.3
-
+```
 Switch back to VM2 terminal and Add the public SSH key to the list of authorized keys on the agent machine
 ```bash
 cat jenkinsAgent_rsa.pub >> ~/.ssh/authorized_keys
