@@ -231,4 +231,9 @@ Go to the below path and change the Number of executors to 0
 
 <img src="https://github.com/yuabhishek14/Production-E2E-Pipeline/assets/43784560/df86fd99-eea1-41ea-934b-bb92136ca023" alt="image" width="500" height="500" />
 
+Now Create a new Agent (remember to select permanent agent flag)
+Fill the details as follows :
+<img src="https://github.com/yuabhishek14/Production-E2E-Pipeline/assets/43784560/01328e71-2823-4ab1-99c2-aa673466e266" alt="image" width="500" height="500" />
+
+
 
