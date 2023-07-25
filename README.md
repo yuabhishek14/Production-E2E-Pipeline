@@ -211,7 +211,12 @@ Create private and public SSH keys. The following command creates the private ke
 ```bash
 mkdir ~/.ssh; cd ~/.ssh/ && ssh-keygen -t rsa -m PEM -C "Jenkins agent key" -f "jenkinsAgent_rsa"
 ```
-Add the public SSH key to the list of authorized keys on the agent machine
+Go to VM1 terminal and create .ssh/known_hosts file .
+```bash
+cd /var/lib/jenkins/
+ssh jenkins@192.168.1.3
+
+Switch back to VM2 terminal and Add the public SSH key to the list of authorized keys on the agent machine
 ```bash
 cat jenkinsAgent_rsa.pub >> ~/.ssh/authorized_keys
 ```
@@ -227,16 +232,16 @@ cat ~/.ssh/jenkinsAgent_rsa
 Now you can add the Agent on the Jenkins UI (Controller)
 
 #### Agent Setup from Jenkins UI
-Go to credentials 
+Go to credentials :-
 
 <img src="https://github.com/yuabhishek14/Production-E2E-Pipeline/assets/43784560/fbeb34c4-5864-41a1-b1ff-9f1939496505" alt="image" width="800" height="500" />
 
-Go to the below path and change the Number of executors to 0
+Go to the below path and change the Number of executors to 0 :-
 
 <img src="https://github.com/yuabhishek14/Production-E2E-Pipeline/assets/43784560/df86fd99-eea1-41ea-934b-bb92136ca023" alt="image" width="500" height="500" />
 
 Now Create a new Agent (remember to select permanent agent flag)
-Fill the details as follows :
+Fill the details as follows :-
 
 <img src="https://github.com/yuabhishek14/Production-E2E-Pipeline/assets/43784560/01328e71-2823-4ab1-99c2-aa673466e266" alt="image" width="300" height="500" />
 
