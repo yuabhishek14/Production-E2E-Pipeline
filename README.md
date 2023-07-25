@@ -227,6 +227,10 @@ cat ~/.ssh/jenkinsAgent_rsa
 Now you can add the Agent on the Jenkins UI (Controller)
 
 #### Agent Setup from Jenkins UI
+Go to credentials 
+
+<img src="https://github.com/yuabhishek14/Production-E2E-Pipeline/assets/43784560/fbeb34c4-5864-41a1-b1ff-9f1939496505" alt="image" width="500" height="500" />
+
 Go to the below path and change the Number of executors to 0
 
 <img src="https://github.com/yuabhishek14/Production-E2E-Pipeline/assets/43784560/df86fd99-eea1-41ea-934b-bb92136ca023" alt="image" width="500" height="500" />
@@ -236,4 +240,4 @@ Fill the details as follows :
 
 <img src="https://github.com/yuabhishek14/Production-E2E-Pipeline/assets/43784560/01328e71-2823-4ab1-99c2-aa673466e266" alt="image" width="300" height="500" />
 
-   <img src="https://github.com/yuabhishek14/Production-E2E-Pipeline/assets/43784560/423f36b4-fca2-4257-ad24-a16898d93429" alt="image" width="300" height="500" />
+<img src="https://github.com/yuabhishek14/Production-E2E-Pipeline/assets/43784560/423f36b4-fca2-4257-ad24-a16898d93429" alt="image" width="300" height="500" />
