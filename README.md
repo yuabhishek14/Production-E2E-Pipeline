@@ -1,4 +1,4 @@
-![image](https://github.com/yuabhishek14/Production-E2E-Pipeline/assets/43784560/f87a1689-5e9c-43ff-b80a-e9613b8af8ae)# Complete Production End to End Pipeline
+# Complete Production End to End Pipeline
 
 This is a complete end to end declarative pipeline 
 
@@ -228,7 +228,6 @@ Now you can add the Agent on the Jenkins UI (Controller)
 
 #### Agent Setup from Jenkins UI
 Go to the below path and change the Number of executors to 0
-![image](https://github.com/yuabhishek14/Production-E2E-Pipeline/assets/43784560/df86fd99-eea1-41ea-934b-bb92136ca023=100x100)
-
+<img src="https://github.com/yuabhishek14/Production-E2E-Pipeline/assets/43784560/df86fd99-eea1-41ea-934b-bb92136ca023" alt="image" width="100" height="100" />
 
 
