@@ -12,7 +12,7 @@ This is a complete end to end declarative pipeline
   <img src="https://cdn.worldvectorlogo.com/logos/sonarqube.svg" alt="SonarQube Logo" width="100" height="60">
   <img src="https://github.com/yuabhishek14/Production-E2E-Pipeline/assets/43784560/80447647-d723-42fc-8b60-209d9a511115" alt="Docker Logo" width="100" height="80">
   <img src="https://roadie.io/static/59fa7a64fb19816e69c0c3dbd5d74a6c/29111/argo-cd-logo.webp" alt="Argo CD Logo" width="70" height="70">
-  <img src="https://kubernetes.io/images/kubernetes-horizontal-color.png" alt="Kubernetes Logo" width="200" height="50">
+  <img src="https://kubernetes.io/images/kubernetes-horizontal-color.png" alt="Kubernetes Logo" width="250" height="50">
 </p>
 
 - **GitHub**: Version control system for source code management. 
