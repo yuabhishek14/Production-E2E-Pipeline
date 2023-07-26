@@ -8,7 +8,7 @@ This is a complete end to end declarative pipeline
 <p align="center">
   <img src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" alt="GitHub Logo" width="60" height="60">
   <img src="https://www.jenkins.io/images/logos/jenkins/jenkins.svg" alt="Jenkins Logo" width="50" height="60">
-  <img src="https://maven.apache.org/images/maven-logo-black-on-white.png" alt="Maven Logo" width="150" height="50">
+  <img src="https://maven.apache.org/images/maven-logo-black-on-white.png" alt="Maven Logo" width="180" height="50">
   <img src="https://cdn.worldvectorlogo.com/logos/sonarqube.svg" alt="SonarQube Logo" width="100" height="60">
   <img src="https://github.com/yuabhishek14/Production-E2E-Pipeline/assets/43784560/80447647-d723-42fc-8b60-209d9a511115" alt="Docker Logo" width="100" height="80">
   <img src="https://roadie.io/static/59fa7a64fb19816e69c0c3dbd5d74a6c/29111/argo-cd-logo.webp" alt="Argo CD Logo" width="70" height="70">
