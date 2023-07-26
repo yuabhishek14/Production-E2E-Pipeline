@@ -7,10 +7,6 @@ This is a complete end to end declarative pipeline
 
 <p align="center">
   <img src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" alt="GitHub Logo" width="60" height="60">
-
-
-
-  
   <img src="https://www.jenkins.io/images/logos/jenkins/jenkins.svg" alt="Jenkins Logo" width="50" height="60">
   <img src="https://maven.apache.org/images/maven-logo-black-on-white.png" alt="Maven Logo" width="150" height="50">
   <img src="https://cdn.worldvectorlogo.com/logos/sonarqube.svg" alt="SonarQube Logo" width="100" height="60">
