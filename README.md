@@ -265,10 +265,4 @@ Note :- The Name field value should match with the Jenkinsfile maven tool value
 3. Setup the Github credentials
    Note :- Generate personal access token and use it as password.
 
-<img src="https://github.com/yuabhishek14/Production-E2E-Pipeline/assets/43784560/a5de99a8-e49e-4cc3-b96a-df674629beb7" alt="image" width="300" height="550" />
-
-
-
-
-
-
+<img src="https://github.com/yuabhishek14/Production-E2E-Pipeline/assets/43784560/a51b27a7-0e73-47ed-9770-1334f23de9dd" alt="image" width="300" height="550" />
