@@ -246,7 +246,7 @@ Fill the details as follows :-
 
 <img src="https://github.com/yuabhishek14/Production-E2E-Pipeline/assets/43784560/423f36b4-fca2-4257-ad24-a16898d93429" alt="image" width="300" height="500" />
 
-## Jenkins Job
+## Jenkins Job (Basic)
 #### Install Java and Maven tool on UI
 Go to plugins and install these plugins : 
 
@@ -266,3 +266,44 @@ Note :- The Name field value should match with the Jenkinsfile maven tool value
    Note :- Generate personal access token and use it as password.
 
 <img src="https://github.com/yuabhishek14/Production-E2E-Pipeline/assets/43784560/a51b27a7-0e73-47ed-9770-1334f23de9dd" alt="image" width="300" height="550" />
+
+#### Jenkinsfile
+Prepare the Jenkinsfile as follows :
+
+```bash
+pipeline{
+    agent{
+        label "jenkins-agent"
+    }
+    tools{
+        jdk 'java17'
+        maven 'Maven3'
+    }
+    stages{
+        stage("Cleanup Workspaces"){
+             steps{
+                cleanWs()
+             }
+        }
+
+        stage("Checkout from SCM"){
+             steps{
+                git branch: 'main', credentialsId: 'github', url: 'https://github.com/yuabhishek14/Production-E2E-Pipeline'
+             }
+        }
+
+        stage("Build Application"){
+             steps{
+                sh "mvn clean package"
+             }
+        }
+
+        stage("Test Application"){
+             steps{
+                sh "mvn test"
+             }
+        }
+    }    
+}
+```
+    
