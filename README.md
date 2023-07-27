@@ -255,7 +255,7 @@ Go to plugins and install these plugins :
 #### Configure Tools on UI
 Go to Tools and search for Maven
 
-<img src="https://github.com/yuabhishek14/Production-E2E-Pipeline/assets/43784560/c609470f-3b7e-4b0e-828a-29ef4ac0f5c4" alt="image" width="300" height="250" />
+<img src="https://github.com/yuabhishek14/Production-E2E-Pipeline/assets/43784560/c609470f-3b7e-4b0e-828a-29ef4ac0f5c4" alt="image" width="300" height="500" />
 
 
 
