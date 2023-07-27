@@ -260,7 +260,13 @@ Note :- The Name field value should match with the Jenkinsfile maven tool value
 
 2. Now search for JDK
 
-<img src="https://github.com/yuabhishek14/Production-E2E-Pipeline/assets/43784560/b9e7ee5d-1e60-4278-a23a-655c559b44fa" alt="image" width="300" height="550" />   
+<img src="https://github.com/yuabhishek14/Production-E2E-Pipeline/assets/43784560/b9e7ee5d-1e60-4278-a23a-655c559b44fa" alt="image" width="300" height="550" /> 
+
+3. Setup the Github credentials
+   Note :- Generate personal access token and use it as password.
+
+<img src="https://github.com/yuabhishek14/Production-E2E-Pipeline/assets/43784560/a5de99a8-e49e-4cc3-b96a-df674629beb7" alt="image" width="300" height="550" />
+
 
 
 
