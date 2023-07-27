@@ -306,8 +306,8 @@ pipeline{
     }    
 }
 ```
-#### Job
+#### Pipeline from UI
 Create a declarative jenkins job as follows :
 1. Check the "Discard old builds" and "Max # of builds to keep" as 2
 
-<img src="https://github.com/yuabhishek14/Production-E2E-Pipeline/assets/43784560/9ee4a4eb-e85e-435c-bb53-996e66c08b9c" alt="image" width="300" height="550" />
+<img src="https://github.com/yuabhishek14/Production-E2E-Pipeline/assets/43784560/9ee4a4eb-e85e-435c-bb53-996e66c08b9c" alt="image" width="350" height="550" />
