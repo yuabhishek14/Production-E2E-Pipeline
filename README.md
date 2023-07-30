@@ -311,3 +311,73 @@ Create a declarative jenkins job as follows :
 1. Check the "Discard old builds" and "Max # of builds to keep" as 2
 
 <img src="https://github.com/yuabhishek14/Production-E2E-Pipeline/assets/43784560/9ee4a4eb-e85e-435c-bb53-996e66c08b9c" alt="image" width="350" height="550" />
+
+
+## SonarQube Integration
+#### Setup
+Login to your VM3 and execute the following commands : 
+Install Postgresql 15
+```bash
+sudo apt update
+sudo apt upgrade
+
+sudo sh -c 'echo "deb http://apt.postgresql.org/pub/repos/apt $(lsb_release -cs)-pgdg main" > /etc/apt/sources.list.d/pgdg.list'
+
+wget -qO- https://www.postgresql.org/media/keys/ACCC4CF8.asc | sudo tee /etc/apt/trusted.gpg.d/pgdg.asc &>/dev/null
+
+sudo apt update
+sudo apt-get -y install postgresql postgresql-contrib
+sudo systemctl enable postgresql
+```
+
+Create Database for Sonarqube
+
+```bash
+sudo passwd postgres
+su - postgres
+
+createuser sonar
+psql 
+ALTER USER sonar WITH ENCRYPTED password 'sonar';
+CREATE DATABASE sonarqube OWNER sonar;
+grant all privileges on DATABASE sonarqube to sonar;
+\q
+
+exit
+```
+
+Install Java 17
+
+```bash
+sudo su -
+
+apt install -y wget apt-transport-https
+mkdir -p /etc/apt/keyrings
+
+wget -O - https://packages.adoptium.net/artifactory/api/gpg/key/public | tee /etc/apt/keyrings/adoptium.asc
+
+echo "deb [signed-by=/etc/apt/keyrings/adoptium.asc] https://packages.adoptium.net/artifactory/deb $(awk -F= '/^VERSION_CODENAME/{print$2}' /etc/os-release) main" | tee /etc/apt/sources.list.d/adoptium.list
+
+apt update
+apt install temurin-17-jdk
+update-alternatives --config java
+/usr/bin/java --version
+
+exit 
+```
+
+Create Database for Sonarqube
+
+```bash
+sudo passwd postgres
+su - postgres
+
+createuser sonar
+psql 
+ALTER USER sonar WITH ENCRYPTED password 'sonar';
+CREATE DATABASE sonarqube OWNER sonar;
+grant all privileges on DATABASE sonarqube to sonar;
+\q
+
+exit
+```
