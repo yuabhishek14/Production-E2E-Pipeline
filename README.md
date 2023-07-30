@@ -317,9 +317,9 @@ and run the pipeline , after successful run it will look something like this :
 <img src="https://github.com/yuabhishek14/Production-E2E-Pipeline/assets/43784560/217be7c4-8ace-4166-9a85-14788d25c06c" alt="image" width="730" height="230" />
 
 ## SonarQube Integration
-#### Setup
+
 Login to your VM3 and execute the following commands : 
-Install Postgresql 15
+#### Install Postgresql 15
 ```bash
 sudo apt update
 sudo apt upgrade
@@ -333,7 +333,7 @@ sudo apt-get -y install postgresql postgresql-contrib
 sudo systemctl enable postgresql
 ```
 
-Create Database for Sonarqube
+#### Create Database for Sonarqube
 
 ```bash
 sudo passwd postgres
@@ -349,7 +349,7 @@ grant all privileges on DATABASE sonarqube to sonar;
 exit
 ```
 
-Install Java 17
+#### Install Java 17
 
 ```bash
 sudo su -
@@ -368,19 +368,103 @@ update-alternatives --config java
 
 exit 
 ```
-
-Create Database for Sonarqube
+#### Increase Limits
 
 ```bash
-sudo passwd postgres
-su - postgres
+sudo vim /etc/security/limits.conf
+```
 
-createuser sonar
-psql 
-ALTER USER sonar WITH ENCRYPTED password 'sonar';
-CREATE DATABASE sonarqube OWNER sonar;
-grant all privileges on DATABASE sonarqube to sonar;
-\q
+Paste the below values at the bottom of the file
 
-exit
+```bash
+sonarqube   -   nofile   65536
+sonarqube   -   nproc    4096
+```
+
+Now go to sysctl.conf file
+
+```bash
+sudo vim /etc/sysctl.conf
+```
+
+Paste the below values at the bottom of the file
+
+```bash
+vm.max_map_count = 262144
+```
+
+Reboot to set the new limits
+
+```bash
+sudo reboot
+```
+
+#### Install Sonarqube
+
+```bash
+sudo wget https://binaries.sonarsource.com/Distribution/sonarqube/sonarqube-9.9.0.65466.zip
+sudo apt install unzip
+sudo unzip sonarqube-9.9.0.65466.zip -d /opt
+sudo mv /opt/sonarqube-9.9.0.65466 /opt/sonarqube
+sudo groupadd sonar
+sudo useradd -c "user to run SonarQube" -d /opt/sonarqube -g sonar sonar
+sudo chown sonar:sonar /opt/sonarqube -R
+```
+
+Update Sonarqube properties with DB credential
+
+```bash
+sudo vim /opt/sonarqube/conf/sonar.properties
+```
+
+Find and replace the below values, you might need to add the sonar.jdbc.url
+
+```bash
+sonar.jdbc.username=sonar
+sonar.jdbc.password=sonar
+sonar.jdbc.url=jdbc:postgresql://localhost:5432/sonarqube
+```
+
+Create service for Sonarqube
+
+```bash
+sudo vim /etc/systemd/system/sonar.service
+```
+
+Paste the below into the file
+
+```bash
+[Unit]
+Description=SonarQube service
+After=syslog.target network.target
+
+[Service]
+Type=forking
+
+ExecStart=/opt/sonarqube/bin/linux-x86-64/sonar.sh start
+ExecStop=/opt/sonarqube/bin/linux-x86-64/sonar.sh stop
+
+User=sonar
+Group=sonar
+Restart=always
+
+LimitNOFILE=65536
+LimitNPROC=4096
+
+[Install]
+WantedBy=multi-user.target
+```
+
+Start Sonarqube and Enable service
+
+```bash
+sudo systemctl start sonar
+sudo systemctl enable sonar
+sudo systemctl status sonar
+sudo tail -f /opt/sonarqube/logs/sonar.log
+```
+
+Access the Sonarqube UI
+```bash
+http://<IP>:9000 i.e http://192.168.1.4:9000
 ```
