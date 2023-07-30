@@ -312,6 +312,9 @@ Create a declarative jenkins job as follows :
 
 <img src="https://github.com/yuabhishek14/Production-E2E-Pipeline/assets/43784560/9ee4a4eb-e85e-435c-bb53-996e66c08b9c" alt="image" width="350" height="550" />
 
+and run the pipeline , after successful run it will look something like this :
+
+<img src="https://github.com/yuabhishek14/Production-E2E-Pipeline/assets/43784560/217be7c4-8ace-4166-9a85-14788d25c06c" alt="image" width="550" height="350" />
 
 ## SonarQube Integration
 #### Setup
