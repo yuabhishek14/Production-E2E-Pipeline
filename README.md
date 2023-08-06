@@ -550,4 +550,4 @@ once the pipeline run is complete you will get the result like this on Sonarqube
 This stage is for if the project doest pass the quality it will block the deployment . For this we need a webhook to respond back to jenkins
 Go to Adminstration >> Configuration >> Webhooks and click on create and fill the following :
 
-<img src="https://github.com/yuabhishek14/Production-E2E-Pipeline/assets/43784560/3d5b8b8e-5216-44a8-94af-5a6a14026449" alt="image" width="390" height="400" /> 
+<img src="https://github.com/yuabhishek14/Production-E2E-Pipeline/assets/43784560/3d5b8b8e-5216-44a8-94af-5a6a14026449" alt="image" width="360" height="400" /> 
