@@ -544,5 +544,5 @@ pipeline{
 ```
 once the pipeline run is complete you will get the result like this on Sonarqube
 
-<img src="https://github.com/yuabhishek14/Production-E2E-Pipeline/assets/43784560/90b8f652-6554-466a-8617-a3a5bf0b1a56" alt="image" width="500" height="200" /> 
+<img src="https://github.com/yuabhishek14/Production-E2E-Pipeline/assets/43784560/90b8f652-6554-466a-8617-a3a5bf0b1a56" alt="image" width="800" height="100" /> 
 
