@@ -551,3 +551,70 @@ This stage is for if the project doest pass the quality it will block the deploy
 Go to Adminstration >> Configuration >> Webhooks and click on create and fill the following :
 
 <img src="https://github.com/yuabhishek14/Production-E2E-Pipeline/assets/43784560/3d5b8b8e-5216-44a8-94af-5a6a14026449" alt="image" width="360" height="400" /> 
+
+Now add the stage in script , updated script :
+```bash
+pipeline{
+    agent{
+        label "jenkins-agent"
+    }
+    tools{
+        jdk 'java17'
+        maven 'Maven3'
+    }
+    stages{
+        stage("Cleanup Workspaces"){
+             steps{
+                cleanWs()
+             }
+        }
+
+        stage("Checkout from SCM"){
+             steps{
+                git branch: 'main', credentialsId: 'github', url: 'https://github.com/yuabhishek14/Production-E2E-Pipeline'
+             }
+        }
+
+        stage("Build Application"){
+             steps{
+                sh "mvn clean package"
+             }
+        }
+
+        stage("Test Application"){
+             steps{
+                sh "mvn test"
+             }
+        }
+
+        stage("Sonarqube Analysis") {
+            steps {
+                script {
+                    withSonarQubeEnv(credentialsId: 'jenkins-sonarqube-token') {
+                        sh "mvn sonar:sonar"
+                    }
+                }
+            }
+
+        }
+
+        stage("Sonarqube Analysis") {
+            steps {
+                script {
+                    waitForQualityGate abortPipeline : false , credentialsId: 'jenkins-sonarqube-token'
+                }
+            }
+
+        }
+    }    
+}
+```
+## Docker Integration
+#### Install Plugins
+
+<img src="https://github.com/yuabhishek14/Production-E2E-Pipeline/assets/43784560/ee741378-54b8-4601-8d90-0da02cfc0192" alt="image" width="360" height="400" /> 
+
+<img src="https://github.com/yuabhishek14/Production-E2E-Pipeline/assets/43784560/15a8d715-008a-4118-a32d-d34bba02ee4e" alt="image" width="360" height="200" /> 
+
+
+
