@@ -471,4 +471,10 @@ http://<IP>:9000 i.e http://192.168.1.4:9000
 
 #### Generating Token
 
-<img src="https://github.com/yuabhishek14/Production-E2E-Pipeline/assets/43784560/49f576ab-3948-428c-888c-42fd18097b39" alt="image" width="740" height="240" />
+Go to My Account >> Security
+
+<img src="https://github.com/yuabhishek14/Production-E2E-Pipeline/assets/43784560/49f576ab-3948-428c-888c-42fd18097b39" alt="image" width="740" height="260" />
+
+#### Sonarqube credential
+Add credentials on Jenkins UI and use the Token generated above as 'secret'
+<img src="https://github.com/yuabhishek14/Production-E2E-Pipeline/assets/43784560/ce6d5493-024d-42e9-b7a0-396e75a99fee" alt="image" width="350" height="550" />
