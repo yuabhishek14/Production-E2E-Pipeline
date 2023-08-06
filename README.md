@@ -482,4 +482,62 @@ Add credentials on Jenkins UI and use the Token generated above as 'secret'
 
 #### Install Required Plugins for SonarQube
 
-<img src="https://github.com/yuabhishek14/Production-E2E-Pipeline/assets/43784560/c9aa8144-2950-4664-a894-c7bb66d63cc7" alt="image" width="390" height="360" />
+<img src="https://github.com/yuabhishek14/Production-E2E-Pipeline/assets/43784560/c9aa8144-2950-4664-a894-c7bb66d63cc7" alt="image" width="390" height="380" />
+
+#### Configure the Integration
+Go to Configure system and in the sonarqube servers section do the following : 
+Image 1
+
+Now go to Global Configuration tool
+
+<img src="https://github.com/yuabhishek14/Production-E2E-Pipeline/assets/43784560/4521fcb9-2e1b-4cd5-a96b-31f2d46d8c6d" alt="image" width="300" height="550" /> 
+
+#### SonarQube Stage in Pipeline
+
+```bash
+pipeline{
+    agent{
+        label "jenkins-agent"
+    }
+    tools{
+        jdk 'java17'
+        maven 'Maven3'
+    }
+    stages{
+        stage("Cleanup Workspaces"){
+             steps{
+                cleanWs()
+             }
+        }
+
+        stage("Checkout from SCM"){
+             steps{
+                git branch: 'main', credentialsId: 'github', url: 'https://github.com/yuabhishek14/Production-E2E-Pipeline'
+             }
+        }
+
+        stage("Build Application"){
+             steps{
+                sh "mvn clean package"
+             }
+        }
+
+        stage("Test Application"){
+             steps{
+                sh "mvn test"
+             }
+        }
+
+        stage("Sonarqube Analysis") {
+            steps {
+                script {
+                    withSonarQubeEnv(credentialsId: 'jenkins-sonarqube-token') {
+                        sh "mvn sonar:sonar"
+                    }
+                }
+            }
+
+        }
+    }    
+}
+```
