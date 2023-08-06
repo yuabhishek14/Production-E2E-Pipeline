@@ -493,7 +493,8 @@ Now go to Global Configuration tool
 <img src="https://github.com/yuabhishek14/Production-E2E-Pipeline/assets/43784560/4521fcb9-2e1b-4cd5-a96b-31f2d46d8c6d" alt="image" width="300" height="500" /> 
 
 #### SonarQube Stage in Pipeline
-
+Add the stage and run the pipeline
+Updated script :
 ```bash
 pipeline{
     agent{
@@ -541,3 +542,7 @@ pipeline{
     }    
 }
 ```
+once the pipeline run is complete you will get the result like this on Sonarqube
+
+<img src="https://github.com/yuabhishek14/Production-E2E-Pipeline/assets/43784560/90b8f652-6554-466a-8617-a3a5bf0b1a56" alt="image" width="500" height="200" /> 
+
