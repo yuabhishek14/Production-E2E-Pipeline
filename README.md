@@ -479,3 +479,7 @@ Go to My Account >> Security
 Add credentials on Jenkins UI and use the Token generated above as 'secret'
 
 <img src="https://github.com/yuabhishek14/Production-E2E-Pipeline/assets/43784560/ce6d5493-024d-42e9-b7a0-396e75a99fee" alt="image" width="390" height="360" />
+
+#### Install Required Plugins for SonarQube
+
+<img src="https://github.com/yuabhishek14/Production-E2E-Pipeline/assets/43784560/c9aa8144-2950-4664-a894-c7bb66d63cc7" alt="image" width="390" height="360" />
