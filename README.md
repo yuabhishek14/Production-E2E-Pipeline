@@ -490,7 +490,7 @@ Image 1
 
 Now go to Global Configuration tool
 
-<img src="https://github.com/yuabhishek14/Production-E2E-Pipeline/assets/43784560/4521fcb9-2e1b-4cd5-a96b-31f2d46d8c6d" alt="image" width="300" height="550" /> 
+<img src="https://github.com/yuabhishek14/Production-E2E-Pipeline/assets/43784560/4521fcb9-2e1b-4cd5-a96b-31f2d46d8c6d" alt="image" width="300" height="500" /> 
 
 #### SonarQube Stage in Pipeline
 
