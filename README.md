@@ -546,3 +546,8 @@ once the pipeline run is complete you will get the result like this on Sonarqube
 
 <img src="https://github.com/yuabhishek14/Production-E2E-Pipeline/assets/43784560/90b8f652-6554-466a-8617-a3a5bf0b1a56" alt="image" width="800" height="100" /> 
 
+#### Quality Gate Stage in Pipeline
+This stage is for if the project doest pass the quality it will block the deployment . For this we need a webhook to respond back to jenkins
+Go to Adminstration >> Configuration >> Webhooks and click on create and fill the following :
+
+<img src="https://github.com/yuabhishek14/Production-E2E-Pipeline/assets/43784560/3d5b8b8e-5216-44a8-94af-5a6a14026449" alt="image" width="300" height="500" /> 
