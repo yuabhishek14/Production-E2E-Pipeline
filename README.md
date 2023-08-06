@@ -471,4 +471,4 @@ http://<IP>:9000 i.e http://192.168.1.4:9000
 
 #### Generating Token
 
-<img src="https://github.com/yuabhishek14/Production-E2E-Pipeline/assets/43784560/49f576ab-3948-428c-888c-42fd18097b39" alt="image" width="730" height="230" />
+<img src="https://github.com/yuabhishek14/Production-E2E-Pipeline/assets/43784560/49f576ab-3948-428c-888c-42fd18097b39" alt="image" width="740" height="240" />
