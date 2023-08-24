@@ -614,7 +614,7 @@ pipeline{
 
 <img src="https://github.com/yuabhishek14/Production-E2E-Pipeline/assets/43784560/ee741378-54b8-4601-8d90-0da02cfc0192" alt="image" width="360" height="400" /> 
 
-<img src="https://github.com/yuabhishek14/Production-E2E-Pipeline/assets/43784560/15a8d715-008a-4118-a32d-d34bba02ee4e" alt="image" width="450" height="200" /> 
+<img src="https://github.com/yuabhishek14/Production-E2E-Pipeline/assets/43784560/15a8d715-008a-4118-a32d-d34bba02ee4e" alt="image" width="600" height="200" /> 
 
 
 
