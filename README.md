@@ -616,5 +616,13 @@ pipeline{
 
 <img src="https://github.com/yuabhishek14/Production-E2E-Pipeline/assets/43784560/15a8d715-008a-4118-a32d-d34bba02ee4e" alt="image" width="600" height="200" /> 
 
+#### Add Docker Credentials 
+
+Generate a Dockehub Access Token which will be used as a "Password"
+
+<img src="https://github.com/yuabhishek14/Production-E2E-Pipeline/assets/43784560/8b24330a-4b0d-4ad7-87e7-6138a6b41d68" alt="image" width="400" height="150" />
+
+#### Add the "Build & Push Docker Image"
+
 
 
