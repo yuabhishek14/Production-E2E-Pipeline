@@ -624,5 +624,37 @@ Generate a Dockehub Access Token which will be used as a "Password"
 
 #### Add the "Build & Push Docker Image"
 
+Introduce Environment variable :
+
+```bash
+environment {
+        APP_NAME = "production-e2e-pipeline"
+        RELEASE = "1.0.0"
+        DOCKER_USER = "abhishekdevops14"
+        DOCKER_PASS = 'dockerhub'
+        IMAGE_NAME = "${DOCKER_USER}" + "/" + "${APP_NAME}"
+        IMAGE_TAG = "${RELEASE}-${BUILD_NUMBER}"
+    }
+```
+
+Add new stage in pipeline :
+
+```bash
+stage("Build & Push Docker Image") {
+            steps {
+                script {
+                    docker.withRegistry('',DOCKER_PASS) {
+                        docker_image = docker.build "${IMAGE_NAME}"
+                    }
+
+                    docker.withRegistry('',DOCKER_PASS) {
+                        docker_image.push("${IMAGE_TAG}")
+                        docker_image.push('latest')
+                    }
+                }
+            }
+
+        }
+```
 
 
