@@ -624,7 +624,7 @@ Generate a Dockehub Access Token which will be used as a "Password"
 
 #### Add the "Build & Push Docker Image"
 
-Introduce Environment variable :
+Introduce Environment variable in the pipeline :
 
 ```bash
 environment {
@@ -635,6 +635,21 @@ environment {
         IMAGE_NAME = "${DOCKER_USER}" + "/" + "${APP_NAME}"
         IMAGE_TAG = "${RELEASE}-${BUILD_NUMBER}"
     }
+```
+
+Create a Dockerfile 
+
+```
+FROM maven:3.9.0-eclipse-temurin-17 as build
+WORKDIR /app
+COPY . .
+RUN mvn clean install
+
+FROM eclipse-temurin:17.0.6_10-jdk
+WORKDIR /app
+COPY --from=build /app/target/demoapp.jar /app/
+EXPOSE 8080
+CMD ["java", "-jar","demoapp.jar"]
 ```
 
 Add new stage in pipeline :
@@ -656,5 +671,7 @@ stage("Build & Push Docker Image") {
 
         }
 ```
+
+## Kubernetes Integration 
 
 
