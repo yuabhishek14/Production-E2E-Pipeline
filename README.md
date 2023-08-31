@@ -673,5 +673,67 @@ stage("Build & Push Docker Image") {
 ```
 
 ## Kubernetes Integration 
+Login to your VM4 and VM5 and execute the following commands parallelly: 
 
+#### Update Package Repository and Upgrade Packages
+  Become root
+```bash
+sudo su -
+```
+  
+  Run from shell prompt
 
+```bash
+sudo apt update
+sudo apt upgrade
+```
+
+#### Create Kubernetes Cluster
+
+```bash
+sudo bash
+curl -sfL https://get.k3s.io | INSTALL_K3S_EXEC="server" sh -s - --disable traefik
+exit
+```
+
+This command downloads and installs K3s, the lightweight Kubernetes distribution.
+
+- `INSTALL_K3S_EXEC="server"`: Specifies that this instance will be the Kubernetes server.
+- `--disable traefik`: Disables the built-in Traefik ingress controller, which is commonly used for managing incoming network traffic to applications.
+
+Create Kubernetes Configuration Directory
+
+```bash
+mkdir .kube
+```
+- This command creates a directory named .kube in the user's home directory to store Kubernetes configuration files
+
+Copy K3s Configuration
+ ```bash
+sudo cp /etc/rancher/k3s/k3s.yaml ./config
+```
+
+This command copies the K3s configuration file k3s.yaml from the default location /etc/rancher/k3s to the newly created .kube directory.
+
+Change Ownership and Permissions
+```bash
+sudo chown ubuntu:ubuntu config
+```
+
+- This is done to ensure that the user has the necessary permissions to access and modify the configuration file.
+
+Set Configuration File Permissions:
+
+```bash
+chmod 400 config
+```
+
+- This command sets the permissions of the configuration file to read-only for the owner. This enhances security by preventing unintended modifications.
+
+Set KUBECONFIG Environment Variable
+
+```bash
+export KUBECONFIG=~/.kube/config
+```
+
+- This command sets the KUBECONFIG environment variable to point to the location of the K3s configuration file. This ensures that the kubectl command knows where to find the configuration for interacting with the Kubernetes cluster.
