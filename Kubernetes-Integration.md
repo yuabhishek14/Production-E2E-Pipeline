@@ -192,3 +192,7 @@ Add the gitops repo in the ArgoCD (use the Github personal access token as passw
 
 <img src="https://github.com/yuabhishek14/Production-E2E-Pipeline/assets/43784560/f36d9a23-5afe-4011-b431-d62d5d3013f5" alt="image" width="300" height="350" />
 
+3. Click on create application and fill the information like this
+
+<img src="https://github.com/yuabhishek14/Production-E2E-Pipeline/assets/43784560/a4cd1f31-30c5-4c3c-893e-462a6e5c6296" alt="image" width="300" height="350" />
+<img src="https://github.com/yuabhishek14/Production-E2E-Pipeline/assets/43784560/945c0ebe-6a9d-4b32-971b-c61e56245716" alt="image" width="300" height="350" />
