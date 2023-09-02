@@ -145,7 +145,7 @@ Now we need to add the app-cluster to our argocd machine .
 - Change the IP address as this is the IP to which kubectl will talk and we copied it from the localhost of VM5
 therefore we need to change the IP to VM4 IP and save the file
 
-<img src="https://github.com/yuabhishek14/Production-E2E-Pipeline/assets/43784560/18566fe6-f6c8-4166-8e05-1db78204fc73" alt="image" width="860" height="130" />
+<img src="https://github.com/yuabhishek14/Production-E2E-Pipeline/assets/43784560/8a5d2f22-766d-4156-8a18-f12406f189ec" alt="image" width="860" height="300" />
 
 ```bash
 export KUBECONFIG=~/.kube/app-cluster.yaml
@@ -153,5 +153,5 @@ export KUBECONFIG=~/.kube/app-cluster.yaml
 
 Now if we check the node we are able to talk to app-cluster
 
-<img src="https://github.com/yuabhishek14/Production-E2E-Pipeline/assets/43784560/18566fe6-f6c8-4166-8e05-1db78204fc73" alt="image" width="860" height="130" />
+<img src="https://github.com/yuabhishek14/Production-E2E-Pipeline/assets/43784560/77b77491-8677-4425-a53b-6ce2cc8c1b05" alt="image" width="400" height="170" />
 
