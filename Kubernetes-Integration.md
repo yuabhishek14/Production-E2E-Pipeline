@@ -197,6 +197,38 @@ Now if we check the clusters section in ArgoCD will be able to see that our App-
 <img src="https://github.com/yuabhishek14/Production-E2E-Pipeline/assets/43784560/a4cd1f31-30c5-4c3c-893e-462a6e5c6296" alt="image" width="260" height="380" />
 <img src="https://github.com/yuabhishek14/Production-E2E-Pipeline/assets/43784560/945c0ebe-6a9d-4b32-971b-c61e56245716" alt="image" width="280" height="380" />
 
-Now if we check the Application we will see 2 pods are created 
+
+- Now if we check the Application we will see 2 pods are created 
 
 <img src="https://github.com/yuabhishek14/Production-E2E-Pipeline/assets/43784560/6872200c-9a7a-426c-b175-9ba2215f05aa" alt="image" />
+
+#### Automate Image Versioning in Deployment manifest
+
+Currently we have to manually update the image version in the deployment.yaml file in our gitops repo.
+To automate this process 
+
+Add new environment variable
+```bash
+environment {
+JENKINS_API_TOKEN = credentials('JENKINS_API_TOKEN')
+}
+```
+Add new stage 
+```bash
+stage("Trigger CD Pipeline") {
+            steps {
+                script {
+                      sh "curl -v -k --user admin:${JENKINS_API_TOKEN} -X POST -H 'cache-control: no-cache' -H 'content-type: application/x-www-form-urlencoded' --data 'IMAGE_TAG=${IMAGE_TAG}' 'http://192.168.1.2:8080/job/gitops-complete-pipeline/buildWithParameters?token=gitops-token'"
+
+                    }
+                }
+            }
+```
+
+Create another pipeline named **"gitops-complete-pipeline"**
+
+<img src="https://github.com/yuabhishek14/Production-E2E-Pipeline/assets/43784560/78f32cf6-907f-4d45-a2c6-c17311c590c4" alt="image" width="280" height="380"/>
+<img src="https://github.com/yuabhishek14/Production-E2E-Pipeline/assets/43784560/5390070c-2e6e-4703-8c22-72f7ac4c0639" alt="image" width="280" height="380"/>
+
+<img src="https://github.com/yuabhishek14/Production-E2E-Pipeline/assets/43784560/01c8efab-0b72-4ce1-83c5-b6faa5f0817e" alt="image" width="280" height="380"/>
+<img src="https://github.com/yuabhishek14/Production-E2E-Pipeline/assets/43784560/560ef122-2a74-4896-b1e6-1e95babfb47c" alt="image" width="280" height="380"/>
