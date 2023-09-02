@@ -620,7 +620,7 @@ pipeline{
 
 Generate a Dockehub Access Token which will be used as a "Password"
 
-<img src="https://github.com/yuabhishek14/Production-E2E-Pipeline/assets/43784560/8b24330a-4b0d-4ad7-87e7-6138a6b41d68" alt="image" width="400" height="150" />
+<img src="https://github.com/yuabhishek14/Production-E2E-Pipeline/assets/43784560/8b24330a-4b0d-4ad7-87e7-6138a6b41d68" alt="image" width="150" height="400" />
 
 #### Add the "Build & Push Docker Image"
 
@@ -777,7 +777,7 @@ Now to access the ArgoCD UI we can check the port no by :
 kubectl -n argocd get service 
 ```
 
-<img src="https://github.com/yuabhishek14/Production-E2E-Pipeline/assets/43784560/0d1bb74f-25f5-440e-9e3c-574f8ef3bf77" alt="image" width="400" height="150" />
+<img src="https://github.com/yuabhishek14/Production-E2E-Pipeline/assets/43784560/0d1bb74f-25f5-440e-9e3c-574f8ef3bf77" alt="image" width="600" height="130" />
 
 or you can check the port directly by doing :
 ```bash
@@ -802,7 +802,7 @@ kubectl -n argocd get secret argocd-initial-admin-secret -o jsonpath="{.data.pas
 
 Retrieve the password from the previous command and note the ArgoCD NodePort. Then, access the Argo UI by visiting http://VM5_IP:ArgoCD_Port in your web browser
 
-<img src="https://github.com/yuabhishek14/Production-E2E-Pipeline/assets/43784560/8de5716d-b4c9-43d2-b1d8-aa68239c6062" alt="image" width="400" height="400" />
+<img src="https://github.com/yuabhishek14/Production-E2E-Pipeline/assets/43784560/8de5716d-b4c9-43d2-b1d8-aa68239c6062" alt="image" width="550" height="350" />
 
 ####
 
