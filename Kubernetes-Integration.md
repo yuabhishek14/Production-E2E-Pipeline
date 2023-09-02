@@ -143,7 +143,7 @@ Now we need to add the app-cluster to our argocd machine .
 - Create a file named "app-cluster.yaml" in the .kube folder on VM4 and paste the copied content into it.
 
 - Change the IP address as this is the IP to which kubectl will talk and we copied it from the localhost of VM5
-therefore we need to change the IP to VM4 IP and save the file
+therefore we need to change the IP to VM5 IP and save the file
 
 <img src="https://github.com/yuabhishek14/Production-E2E-Pipeline/assets/43784560/8a5d2f22-766d-4156-8a18-f12406f189ec" alt="image" width="960" height="270" />
 
@@ -154,4 +154,31 @@ export KUBECONFIG=~/.kube/app-cluster.yaml
 Now if we check the node we are able to talk to app-cluster
 
 <img src="https://github.com/yuabhishek14/Production-E2E-Pipeline/assets/43784560/77b77491-8677-4425-a53b-6ce2cc8c1b05" alt="image" width="450" height="130" />
+
+#### Install ArgoCD command line tool
+
+```bash
+curl -sSL -o argocd-linux-amd64 https://github.com/argoproj/argo-cd/releases/latest/download/argocd-linux-amd64
+sudo install -m 555 argocd-linux-amd64 /usr/local/bin/argocd
+rm argocd-linux-amd64
+```
+
+#### Login to ArgoCD
+
+```bash
+argocd login 192.168.1.5:31815 (NodeIP:argocd port)
+
+```
+
+#### Register App-Cluster
+
+```bash
+argocd cluster add default --name app-cluster
+```
+
+- After running these commands, you should be logged into the specified ArgoCD server, and the "app-cluster" should be added as a target cluster for deploying applications using ArgoCD. You can then use ArgoCD's GitOps features to define and manage your applications' desired states in Git repositories and have ArgoCD automatically synchronize and deploy those applications to the "app-cluster" Kubernetes cluster.
+
+Now if we check the clusters section in ArgoCD will be able to see that our App-Cluster is added to ArgoCD
+
+<img src="https://github.com/yuabhishek14/Production-E2E-Pipeline/assets/43784560/112e2385-1eec-4677-a58d-4dc5c2b9d19b" alt="image" width="450" height="150" />
 
