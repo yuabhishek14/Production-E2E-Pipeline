@@ -207,13 +207,24 @@ Now if we check the clusters section in ArgoCD will be able to see that our App-
 Currently we have to manually update the image version in the deployment.yaml file in our gitops repo.
 To automate this process 
 
+Create Jenkins API Token
+
+- Go to Jenkins UI and go to your user and click on configure
+- Click on "Add new Token" . Name it as "JENKINS_API_TOKEN"
+
+Add the JENKINS_API_TOKEN credentials
+
+- Use the token generated earlier as the password.
+<img src="https://github.com/yuabhishek14/Production-E2E-Pipeline/assets/43784560/a119d51f-7b15-4d1f-9fc2-181eec6b068f" alt="image" width="280" height="380" />
+
+
 Add new environment variable
 ```bash
 environment {
 JENKINS_API_TOKEN = credentials('JENKINS_API_TOKEN')
 }
 ```
-Add new stage 
+Add new stage in Jenkinsfile
 ```bash
 stage("Trigger CD Pipeline") {
             steps {
@@ -232,3 +243,59 @@ Create another pipeline named **"gitops-complete-pipeline"**
 
 <img src="https://github.com/yuabhishek14/Production-E2E-Pipeline/assets/43784560/01c8efab-0b72-4ce1-83c5-b6faa5f0817e" alt="image" width="280" height="380"/>
 <img src="https://github.com/yuabhishek14/Production-E2E-Pipeline/assets/43784560/560ef122-2a74-4896-b1e6-1e95babfb47c" alt="image" width="280" height="470"/>
+
+Create the Jenkinsfile for gitops pipeline :
+
+```bash
+pipeline {
+    agent {
+        label "jenkins-agent"
+    }
+    environment {
+        APP_NAME = "production-e2e-pipeline"
+    }
+
+    stages {
+        stage("Cleanup Workspace") {
+            steps {
+                cleanWs()
+            }
+        }
+    
+    
+        stage("Checkout from SCM") {
+            steps {
+                git branch: 'main', credentialsId: 'github', url: 'https://github.com/yuabhishek14/gitops-production-e2e-pipeline'
+            }
+        }
+    
+
+    
+        stage("Update the Deployment Tags") {
+            steps {
+                sh """
+                    cat deployment.yaml
+                    sed -i 's/${APP_NAME}.*/${APP_NAME}:${IMAGE_TAG}/g' deployment.yaml
+                    cat deployment.yaml
+                """
+            }
+        }
+
+        stage("Push the changed deployment file to Git") {
+            steps {
+                sh """
+                    git config --global user.name "yuabhishek14"
+                    git config --global user.email "yuabhishek14@gmail.com"
+                    git add deployment.yaml
+                    git commit -m "Updated Deployment Manifest"
+                """
+                withCredentials([gitUsernamePassword(credentialsId: 'github', gitToolName: 'Default')]) {
+                    sh "git push https://github.com/yuabhishek14/gitops-production-e2e-pipeline main"
+                }
+            }
+        }
+
+    }
+
+}
+```
