@@ -1,5 +1,5 @@
 ## Kubernetes Integration 
-Login to your VM4 and VM5 and execute the following commands parallelly: 
+Login to your VM4(argocd) and VM5 (app-cluster) and execute the following commands parallelly: 
 
 #### Update Package Repository and Upgrade Packages
   Become root
@@ -130,6 +130,8 @@ Retrieve the password from the previous command and note the ArgoCD NodePort. Th
 
 <img src="https://github.com/yuabhishek14/Production-E2E-Pipeline/assets/43784560/8de5716d-b4c9-43d2-b1d8-aa68239c6062" alt="image" width="550" height="350" />
 
-####
+#### Add the App-Cluster in ArgoCd
 
+Currently if we check the nodes in both VM4 and VM5 
 
+![Alt text](image-1.png)
