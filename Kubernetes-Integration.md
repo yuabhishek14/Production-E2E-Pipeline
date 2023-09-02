@@ -180,5 +180,5 @@ argocd cluster add default --name app-cluster
 
 Now if we check the clusters section in ArgoCD will be able to see that our App-Cluster is added to ArgoCD
 
-<img src="https://github.com/yuabhishek14/Production-E2E-Pipeline/assets/43784560/112e2385-1eec-4677-a58d-4dc5c2b9d19b" alt="image" width="1200" height="250" />
+<img src="https://github.com/yuabhishek14/Production-E2E-Pipeline/assets/43784560/112e2385-1eec-4677-a58d-4dc5c2b9d19b" alt="image" width="1220" height="250" />
 
