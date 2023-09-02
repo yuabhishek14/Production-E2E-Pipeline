@@ -228,7 +228,7 @@ stage("Trigger CD Pipeline") {
 Create another pipeline named **"gitops-complete-pipeline"**
 
 <img src="https://github.com/yuabhishek14/Production-E2E-Pipeline/assets/43784560/78f32cf6-907f-4d45-a2c6-c17311c590c4" alt="image" width="280" height="380"/>
-<img src="https://github.com/yuabhishek14/Production-E2E-Pipeline/assets/43784560/5390070c-2e6e-4703-8c22-72f7ac4c0639" alt="image" width="320" height="380"/>
+<img src="https://github.com/yuabhishek14/Production-E2E-Pipeline/assets/43784560/5390070c-2e6e-4703-8c22-72f7ac4c0639" alt="image" width="350" height="380"/>
 
 <img src="https://github.com/yuabhishek14/Production-E2E-Pipeline/assets/43784560/01c8efab-0b72-4ce1-83c5-b6faa5f0817e" alt="image" width="280" height="380"/>
-<img src="https://github.com/yuabhishek14/Production-E2E-Pipeline/assets/43784560/560ef122-2a74-4896-b1e6-1e95babfb47c" alt="image" width="280" height="430"/>
+<img src="https://github.com/yuabhishek14/Production-E2E-Pipeline/assets/43784560/560ef122-2a74-4896-b1e6-1e95babfb47c" alt="image" width="280" height="470"/>
