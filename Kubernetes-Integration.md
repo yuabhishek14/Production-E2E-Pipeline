@@ -134,4 +134,5 @@ Retrieve the password from the previous command and note the ArgoCD NodePort. Th
 
 Currently if we check the nodes in both VM4 and VM5 
 
-![Alt text](image-1.png)
+<img src="https://github.com/yuabhishek14/Production-E2E-Pipeline/assets/43784560/18566fe6-f6c8-4166-8e05-1db78204fc73" alt="image" width="800" height="100" />
+
