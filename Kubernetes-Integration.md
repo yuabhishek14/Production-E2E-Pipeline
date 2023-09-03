@@ -204,8 +204,8 @@ Now if we check the clusters section in ArgoCD will be able to see that our App-
 
 #### Automate Image Versioning in Deployment manifest
 
-Currently we have to manually update the image version in the deployment.yaml file in our gitops repo.
-To automate this process 
+- Currently we have to manually update the image version in the deployment.yaml file in our gitops repo.
+To automate this process we have to add a new stage in our existing pipeline to trigger a new pipeline with parameters . We will pass the Image_Tag parameter to the new GitOps pipeline which will then update the image-tag in deployement.yaml file in repo . Then the ArgoCd will always get the latest image automatically 
 
 Create Jenkins API Token
 
@@ -299,3 +299,5 @@ pipeline {
 
 }
 ```
+
+Now Run the **production-e2e-pipeline** 
