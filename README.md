@@ -61,22 +61,40 @@ Before setting up the project, ensure you meet the following prerequisites:
    - Set up SSH access between your host system and the virtual machines to enable seamless communication.
 
 
-## Jenkins-Setup
- 
- [Link](https://github.com/yuabhishek14/Production-E2E-Pipeline/blob/main/Jenkins-Setup.md)
+## Table of Contents
 
-## Jenkins-Agent-Setup
+- [Jenkins Setup](#jenkins-setup)
+- [Jenkins Agent Setup](#jenkins-agent-setup)
+- [Sonar Integration](#sonar-integration)
+- [Docker Integration](#docker-integration)
+- [Kubernetes Integration](#kubernetes-integration)
 
-[Link](https://github.com/yuabhishek14/Production-E2E-Pipeline/blob/main/Jenkins-AgentSetup.md)
+---
 
-## Sonar-Integration
+## Jenkins Setup
 
-[Link](https://github.com/yuabhishek14/Production-E2E-Pipeline/blob/main/Sonar-Integration.md)
+[Detailed Documentation](https://github.com/yuabhishek14/Production-E2E-Pipeline/blob/main/Jenkins-Setup.md)
 
-## Docker Integeration
+---
 
-[Link](https://github.com/yuabhishek14/Production-E2E-Pipeline/blob/main/Docker-Integration.md)
+## Jenkins Agent Setup
+
+[Detailed Documentation](https://github.com/yuabhishek14/Production-E2E-Pipeline/blob/main/Jenkins-AgentSetup.md)
+
+---
+
+## Sonar Integration
+
+[Detailed Documentation](https://github.com/yuabhishek14/Production-E2E-Pipeline/blob/main/Sonar-Integration.md)
+
+---
+
+## Docker Integration
+
+[Detailed Documentation](https://github.com/yuabhishek14/Production-E2E-Pipeline/blob/main/Docker-Integration.md)
+
+---
 
 ## Kubernetes Integration
 
-[Link](https://github.com/yuabhishek14/Production-E2E-Pipeline/blob/main/Kubernetes-Integration.md)
+[Detailed Documentation](https://github.com/yuabhishek14/Production-E2E-Pipeline/blob/main/Kubernetes-Integration.md)
