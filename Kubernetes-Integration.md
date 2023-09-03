@@ -304,4 +304,6 @@ Now Run the **production-e2e-pipeline**
 
 <img src="https://github.com/yuabhishek14/Production-E2E-Pipeline/assets/43784560/3aa0f8a8-275f-4e22-8d7b-34c7a269adcf" alt="image" width="700" height="120"/>
 
-<img src="https://github.com/yuabhishek14/Production-E2E-Pipeline/assets/43784560/045d1200-b69c-484d-8b5a-2430226e159d" alt="image" width="700" height="180"/>
+In the final stage, labeled "Trigger CD Pipeline," we initiate the gitops-complete-pipeline. This pipeline plays a crucial role in refreshing the image tag within our gitops repository with the latest image-tag available.
+
+<img src="https://github.com/yuabhishek14/Production-E2E-Pipeline/assets/43784560/045d1200-b69c-484d-8b5a-2430226e159d" alt="image" width="700" height="200"/>
