@@ -1,6 +1,7 @@
 # Complete Production End to End Pipeline
 
-This is a complete end to end declarative pipeline 
+**Overview:**
+This comprehensive CI/CD pipeline orchestrates the entire production workflow. It automatically triggers a Jenkins job when code is pushed to the GitHub repository. This job encompasses building artifacts, performing SonarQube analysis, creating a Docker image, and consistently pushing it to Docker Hub with versioning based on Jenkins build numbers. Subsequently, it initiates another essential pipeline responsible for updating the image tag in our GitOps repository, ensuring ArgoCD always deploys the application with the latest image-tag.
 
 ## Tech Stack
 
